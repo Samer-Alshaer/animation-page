@@ -1,0 +1,180 @@
+/*--------------------------
+Mario
+--------------------------/
+--------------------------*/
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sky {
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(139, 218, 254);
+  position: relative;
+  overflow: hidden;
+}
+
+.sky .cloud .plane {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  width: 500px;
+  animation: move-left 20s linear infinite;
+}
+
+.sky .cloud .plane img {
+  width: 100%;
+  transform: scaleX(-1);
+}
+
+.sky .cloud .cloud1 {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  width: 200px;
+  animation: move-left 70s linear infinite;
+}
+
+.sky .cloud .cloud2 {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 150px;
+  animation: move-left 70s linear infinite;
+  opacity: 0.6;
+}
+
+.ground {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  background-color: rgba(1, 97, 9, 0.774);
+}
+
+.road {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(111, 110, 110);
+  border-top: 10px solid rgb(164, 164, 164);
+}
+
+.road .lines {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  border-top: 10px dashed #fff;
+}
+
+.ground .lamp .lamp1 {
+  position: absolute;
+  bottom: 0%;
+  right: 50px;
+  height: 300px;
+}
+
+.ground .lamp .lamp2 {
+  position: absolute;
+  bottom: 0%;
+  left: 50px;
+  height: 300px;
+}
+
+.ground .lamp img {
+  width: 200px;
+}
+
+@media screen and (max-width: 576px) {
+  .ground .lamp .lamp1 {
+    display: none;
+  }
+
+  .ground {
+    height: 20vh;
+  }
+
+  .road {
+    height: 40vh;
+  }
+}
+
+.road .cars .car1 {
+  width: 100px;
+  position: absolute;
+  top: -10px;
+  left: 50px;
+  animation: move-right 7s linear infinite;
+}
+
+.road .cars .car1 img {
+  width: 100%;
+}
+
+.road .cars .car2 {
+  width: 150px;
+  position: absolute;
+  top: 55%;
+  right: 50px;
+  animation: move-left 7s linear infinite;
+}
+
+.road .cars .car2 img {
+  width: 100%;
+  transform: scaleX(-1);
+}
+
+.road .cars .car2 .wheel1 {
+  width: 47px;
+  position: absolute;
+  left: 21px;
+  top: 40px;
+  animation: wheel-move 7s linear infinite;
+}
+
+.road .cars .car2 .wheel2 {
+  width: 47px;
+  position: absolute;
+  right: 21px;
+  top: 40px;
+  animation: wheel-move 5s infinite;
+}
+
+/*------------------
+Animation
+-------------------*/
+
+@keyframes move-left {
+  0% {
+    transform: translateX(300px);
+  }
+
+  100% {
+    transform: translateX(-1600px);
+  }
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-300px);
+  }
+
+  100% {
+    transform: translateX(1600px);
+  }
+}
+
+@keyframes wheel-move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
